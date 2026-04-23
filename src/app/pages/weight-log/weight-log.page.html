@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Weight Log</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Add Weight Entry</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Date</ion-label>
+        <ion-datetime
+          presentation="date"
+          [(ngModel)]="formData.date">
+        </ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Weight (kg)</ion-label>
+        <ion-input
+          type="number"
+          [(ngModel)]="formData.weight">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Note</ion-label>
+        <ion-textarea
+          [(ngModel)]="formData.note">
+        </ion-textarea>
+      </ion-item>
+
+      <ion-button expand="block" class="ion-margin-top" (click)="addEntry()">
+        Save Entry
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Saved Entries</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list *ngIf="weightEntries.length > 0; else emptyState">
+        <ion-item *ngFor="let entry of weightEntries">
+          <ion-label>
+            <h2>{{ entry.weight }} kg</h2>
+            <p>{{ entry.date | date:'mediumDate' }}</p>
+            <p>{{ entry.note || 'No note added' }}</p>
+          </ion-label>
+
+          <ion-button color="danger" fill="outline" (click)="deleteEntry(entry.id)">
+            Delete
+          </ion-button>
+        </ion-item>
+      </ion-list>
+
+      <ng-template #emptyState>
+        <p>No weight entries yet.</p>
+      </ng-template>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
