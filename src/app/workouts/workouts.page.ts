@@ -10,6 +10,7 @@ import {
   IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
+import { RouterLink } from '@angular/router';
 
 import { Workout } from '../models/workout';
 import { WorkoutService } from '../services/workout.service';
@@ -28,7 +29,8 @@ import { WorkoutService } from '../services/workout.service';
     IonContent,
     IonHeader,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    RouterLink
   ]
 })
 export class WorkoutsPage implements OnInit {

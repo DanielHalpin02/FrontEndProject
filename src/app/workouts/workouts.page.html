@@ -7,7 +7,7 @@
 <ion-content class="ion-padding">
   <p *ngIf="errorMessage">{{ errorMessage }}</p>
 
-  <ion-card *ngFor="let workout of workouts | slice:0:20">
+  <ion-card *ngFor="let workout of workouts | slice:0:20" [routerLink]="['/workouts', workout.id]">
     <ion-card-header>
       <ion-card-title>{{ workout.name }}</ion-card-title>
     </ion-card-header>
