@@ -1,20 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import {
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardTitle,
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar
+} from '@ionic/angular/standalone';
+
+import { Workout } from '../models/workout';
+import { WorkoutService } from '../services/workout.service';
 
 @Component({
   selector: 'app-workouts',
   templateUrl: './workouts.page.html',
   styleUrls: ['./workouts.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [
+    CommonModule,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardTitle,
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar
+  ]
 })
 export class WorkoutsPage implements OnInit {
+  workouts: Workout[] = [];
+  errorMessage = '';
 
-  constructor() { }
+  constructor(private workoutService: WorkoutService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.workoutService.getWorkouts().subscribe({
+      next: (data) => {
+        this.workouts = data;
+      },
+      error: () => {
+        this.errorMessage = 'Unable to load workouts right now.';
+      }
+    });
   }
-
 }
