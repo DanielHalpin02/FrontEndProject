@@ -1,6 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
 import { provideIonicAngular } from '@ionic/angular/standalone';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
@@ -11,6 +12,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideIonicAngular(),
     provideRouter(routes),
+    provideHttpClient(),
     importProvidersFrom(IonicStorageModule.forRoot())
   ]
 }).catch(err => console.error(err));
