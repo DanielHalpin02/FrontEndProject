@@ -1,3 +1,25 @@
-ion-card {
+.page-intro {
   margin-bottom: 16px;
+}
+
+.page-intro h2 {
+  margin-bottom: 6px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.page-intro p {
+  color: #666;
+}
+
+.workout-card {
+  margin-bottom: 16px;
+  border-radius: 16px;
+}
+
+.empty-message,
+.error-message {
+  color: #666;
+  text-align: center;
+  margin-top: 16px;
 }

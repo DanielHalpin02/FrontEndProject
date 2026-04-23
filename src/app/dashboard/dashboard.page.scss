@@ -1,3 +1,30 @@
-ion-card {
+.page-intro {
   margin-bottom: 16px;
+}
+
+.page-intro h2 {
+  margin-bottom: 6px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.page-intro p {
+  color: #666;
+}
+
+.summary-card {
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.stat-row:last-child {
+  border-bottom: none;
 }

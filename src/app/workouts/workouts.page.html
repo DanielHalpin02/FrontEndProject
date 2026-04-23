@@ -8,18 +8,26 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <div class="page-intro">
+    <h2>Workout Explorer</h2>
+    <p>Browse exercises and tap a card to see more details.</p>
+  </div>
+
   <ion-searchbar
     placeholder="Search workouts by name"
     (ionInput)="onSearchChange($event)">
   </ion-searchbar>
 
-  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
 
-  <p *ngIf="!errorMessage && filteredWorkouts.length === 0">
+  <p *ngIf="!errorMessage && filteredWorkouts.length === 0" class="empty-message">
     No workouts found.
   </p>
 
-  <ion-card *ngFor="let workout of filteredWorkouts | slice:0:20" [routerLink]="['/workouts', workout.id]">
+  <ion-card
+    class="workout-card"
+    *ngFor="let workout of filteredWorkouts | slice:0:20"
+    [routerLink]="['/workouts', workout.id]">
     <ion-card-header>
       <ion-card-title>{{ workout.name }}</ion-card-title>
     </ion-card-header>

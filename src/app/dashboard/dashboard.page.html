@@ -8,26 +8,31 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-card>
+  <div class="page-intro">
+    <h2>Your Progress</h2>
+    <p>A quick overview of your saved weight data.</p>
+  </div>
+
+  <ion-card class="summary-card">
     <ion-card-header>
       <ion-card-title>Progress Summary</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p>
-        <strong>Latest Weight:</strong>
-        {{ latestWeight !== null ? (latestWeight + ' kg') : 'No entries yet' }}
-      </p>
+      <div class="stat-row">
+        <span>Latest Weight</span>
+        <strong>{{ latestWeight !== null ? (latestWeight + ' kg') : 'No entries yet' }}</strong>
+      </div>
 
-      <p>
-        <strong>Total Entries:</strong>
-        {{ totalEntries }}
-      </p>
+      <div class="stat-row">
+        <span>Total Entries</span>
+        <strong>{{ totalEntries }}</strong>
+      </div>
 
-      <p>
-        <strong>Average Weight:</strong>
-        {{ averageWeight !== null ? (averageWeight | number:'1.1-1') + ' kg' : 'No entries yet' }}
-      </p>
+      <div class="stat-row">
+        <span>Average Weight</span>
+        <strong>{{ averageWeight !== null ? ((averageWeight | number:'1.1-1') + ' kg') : 'No entries yet' }}</strong>
+      </div>
     </ion-card-content>
   </ion-card>
 

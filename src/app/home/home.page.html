@@ -5,18 +5,31 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h1>Welcome to FitTrack</h1>
-  <p>Track your weight, calories, and workouts.</p>
+  <div class="hero">
+    <h1>Welcome to FitTrack</h1>
+    <p>
+      Track your weight, explore workouts, and monitor your fitness progress
+      in one place.
+    </p>
+  </div>
 
-  <ion-button expand="block" routerLink="/weight-log">
-    Go to Weight Log
-  </ion-button>
+  <ion-card class="feature-card">
+    <ion-card-header>
+      <ion-card-title>Get Started</ion-card-title>
+    </ion-card-header>
 
-  <ion-button expand="block" fill="outline" routerLink="/dashboard">
-    Go to Dashboard
-  </ion-button>
+    <ion-card-content>
+      <ion-button expand="block" routerLink="/weight-log">
+        Go to Weight Log
+      </ion-button>
 
-  <ion-button expand="block" fill="outline" routerLink="/workouts">
-    Browse Workouts
-  </ion-button>
+      <ion-button expand="block" fill="outline" routerLink="/dashboard">
+        Go to Dashboard
+      </ion-button>
+
+      <ion-button expand="block" fill="outline" routerLink="/workouts">
+        Browse Workouts
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

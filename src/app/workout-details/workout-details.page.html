@@ -8,18 +8,33 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
 
-  <ion-card *ngIf="workout">
+  <ion-card *ngIf="workout" class="details-card">
     <ion-card-header>
       <ion-card-title>{{ workout.name }}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p><strong>Category:</strong> {{ workout.category }}</p>
-      <p><strong>Level:</strong> {{ workout.level }}</p>
-      <p><strong>Equipment:</strong> {{ workout.equipment || 'Not specified' }}</p>
-      <p><strong>Description:</strong> {{ description }}</p>
+      <div class="detail-row">
+        <span>Category</span>
+        <strong>{{ workout.category }}</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Level</span>
+        <strong>{{ workout.level }}</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Equipment</span>
+        <strong>{{ workout.equipment || 'Not specified' }}</strong>
+      </div>
+
+      <div class="description-box">
+        <h3>Description</h3>
+        <p>{{ description }}</p>
+      </div>
     </ion-card-content>
   </ion-card>
 
