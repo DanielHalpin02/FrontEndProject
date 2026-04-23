@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Device } from '@capacitor/device';
+
 import {
   IonButton,
   IonCard,
@@ -18,6 +21,7 @@ import {
   styleUrls: ['./home.page.scss'],
   standalone: true,
   imports: [
+    CommonModule,
     IonHeader,
     IonToolbar,
     IonTitle,
@@ -30,4 +34,10 @@ import {
     RouterLink
   ]
 })
-export class HomePage {}
+export class HomePage implements OnInit {
+  deviceInfo: any;
+
+  async ngOnInit(): Promise<void> {
+    this.deviceInfo = await Device.getInfo();
+  }
+}

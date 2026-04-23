@@ -11,6 +11,9 @@
       Track your weight, explore workouts, and monitor your fitness progress
       in one place.
     </p>
+    <p *ngIf="deviceInfo">
+  Platform: {{ deviceInfo.platform }}
+</p>
   </div>
 
   <ion-card class="feature-card">
