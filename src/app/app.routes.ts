@@ -10,12 +10,12 @@ export const routes: Routes = [
     loadComponent: () => import('./weight-log/weight-log.page').then(m => m.WeightLogPage),
   },
   {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/dashboard.page').then(m => m.DashboardPage),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },
-  {
-    path: 'dashboard',
-    loadComponent: () => import('./dashboard/dashboard.page').then( m => m.DashboardPage)
   },
 ];
