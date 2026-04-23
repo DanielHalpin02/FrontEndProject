@@ -33,4 +33,25 @@ export class StorageService {
     const updatedEntries = entries.filter(entry => entry.id !== id);
     await this.storage?.set(this.weightKey, updatedEntries);
   }
+
+  async getLatestWeight(): Promise<number | null> {
+    const entries = await this.getWeightEntries();
+    return entries.length > 0 ? entries[0].weight : null;
+  }
+
+  async getWeightEntryCount(): Promise<number> {
+    const entries = await this.getWeightEntries();
+    return entries.length;
+  }
+
+  async getAverageWeight(): Promise<number | null> {
+    const entries = await this.getWeightEntries();
+
+    if (entries.length === 0) {
+      return null;
+    }
+
+    const total = entries.reduce((sum, entry) => sum + entry.weight, 0);
+    return total / entries.length;
+  }
 }
