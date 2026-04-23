@@ -18,12 +18,13 @@ export const routes: Routes = [
     loadComponent: () => import('./workouts/workouts.page').then(m => m.WorkoutsPage),
   },
   {
+    path: 'workouts/:id',
+    loadComponent: () =>
+      import('./workout-details/workout-details.page').then(m => m.WorkoutDetailsPage),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },
-  {
-    path: 'workout-details',
-    loadComponent: () => import('./workout-details/workout-details.page').then( m => m.WorkoutDetailsPage)
   },
 ];
