@@ -14,12 +14,12 @@ export const routes: Routes = [
     loadComponent: () => import('./dashboard/dashboard.page').then(m => m.DashboardPage),
   },
   {
+    path: 'workouts',
+    loadComponent: () => import('./workouts/workouts.page').then(m => m.WorkoutsPage),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },
-  {
-    path: 'workouts',
-    loadComponent: () => import('./workouts/workouts.page').then( m => m.WorkoutsPage)
   },
 ];
