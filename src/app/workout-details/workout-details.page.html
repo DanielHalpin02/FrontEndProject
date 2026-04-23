@@ -1,13 +1,26 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>workout-details</ion-title>
+    <ion-title>Workout Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">workout-details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <ion-card *ngIf="workout">
+    <ion-card-header>
+      <ion-card-title>{{ workout.name }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Category:</strong> {{ workout.category }}</p>
+      <p><strong>Level:</strong> {{ workout.level }}</p>
+      <p><strong>Equipment:</strong> {{ workout.equipment || 'Not specified' }}</p>
+      <p><strong>Description:</strong> {{ description }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" routerLink="/workouts">
+    Back to Workouts
+  </ion-button>
 </ion-content>
