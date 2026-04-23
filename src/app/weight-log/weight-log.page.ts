@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
+  IonBackButton,
+  IonButtons,
   IonButton,
   IonCard,
   IonCardContent,
@@ -30,6 +32,8 @@ import { StorageService } from '../services/storage.service';
   imports: [
     CommonModule,
     FormsModule,
+    IonBackButton,
+    IonButtons,
     IonButton,
     IonCard,
     IonCardContent,

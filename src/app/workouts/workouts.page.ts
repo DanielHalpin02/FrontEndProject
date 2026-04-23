@@ -8,7 +8,9 @@ import {
   IonContent,
   IonHeader,
   IonTitle,
-  IonToolbar
+  IonToolbar,
+  IonBackButton,
+  IonButtons
 } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 
@@ -30,6 +32,8 @@ import { WorkoutService } from '../services/workout.service';
     IonHeader,
     IonTitle,
     IonToolbar,
+    IonBackButton,
+    IonButtons,
     RouterLink
   ]
 })
@@ -41,12 +45,8 @@ export class WorkoutsPage implements OnInit {
 
   ngOnInit(): void {
     this.workoutService.getWorkouts().subscribe({
-      next: (data) => {
-        this.workouts = data;
-      },
-      error: () => {
-        this.errorMessage = 'Unable to load workouts right now.';
-      }
+      next: (data) => (this.workouts = data),
+      error: () => (this.errorMessage = 'Unable to load workouts right now.')
     });
   }
 }

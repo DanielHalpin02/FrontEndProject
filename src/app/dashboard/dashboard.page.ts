@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  IonBackButton,
+  IonButtons,
   IonButton,
   IonCard,
   IonCardContent,
@@ -22,6 +24,8 @@ import { StorageService } from '../services/storage.service';
   standalone: true,
   imports: [
     CommonModule,
+    IonBackButton,
+    IonButtons,
     IonButton,
     IonCard,
     IonCardContent,

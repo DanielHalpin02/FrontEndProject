@@ -9,7 +9,9 @@ import {
   IonContent,
   IonHeader,
   IonTitle,
-  IonToolbar
+  IonToolbar,
+  IonBackButton,
+  IonButtons
 } from '@ionic/angular/standalone';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
@@ -32,6 +34,8 @@ import { WorkoutService } from '../services/workout.service';
     IonHeader,
     IonTitle,
     IonToolbar,
+    IonBackButton,
+    IonButtons,
     RouterLink
   ]
 })
@@ -46,14 +50,14 @@ export class WorkoutDetailsPage implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const workoutId = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
 
-    if (!workoutId) {
+    if (!id) {
       this.errorMessage = 'Workout not found.';
       return;
     }
 
-    this.workoutService.getWorkoutById(workoutId).subscribe({
+    this.workoutService.getWorkoutById(id).subscribe({
       next: (data) => {
         if (!data) {
           this.errorMessage = 'Workout not found.';
@@ -64,7 +68,7 @@ export class WorkoutDetailsPage implements OnInit {
         this.description = this.workoutService.getWorkoutDescription(data.name);
       },
       error: () => {
-        this.errorMessage = 'Unable to load workout details right now.';
+        this.errorMessage = 'Unable to load workout details.';
       }
     });
   }
