@@ -22,6 +22,3 @@ Technologies I Used
 - Ionic Storage
 - Angular HttpClient
 - Capacitor
-
-3. Run the app:
-   ionic serve
