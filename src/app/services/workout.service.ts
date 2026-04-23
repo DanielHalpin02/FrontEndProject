@@ -7,7 +7,8 @@ import { Workout } from '../models/workout';
   providedIn: 'root'
 })
 export class WorkoutService {
-  private workoutUrl = 'https://mocki.io/v1/8796f4db-6b0c-4d9f-9b2d-9f7fd0d4e6d6';
+  private workoutUrl =
+    'https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json';
 
   constructor(private http: HttpClient) {}
 

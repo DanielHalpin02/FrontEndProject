@@ -22,4 +22,8 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'workout-details',
+    loadComponent: () => import('./workout-details/workout-details.page').then( m => m.WorkoutDetailsPage)
+  },
 ];

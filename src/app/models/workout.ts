@@ -1,7 +1,7 @@
 export interface Workout {
-  id: number;
+  id: string;
   name: string;
   category: string;
-  duration: string;
-  difficulty: string;
+  level: string;
+  equipment: string | null;
 }
