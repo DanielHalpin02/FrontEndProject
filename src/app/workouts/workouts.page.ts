@@ -45,7 +45,7 @@ export class WorkoutsPage implements OnInit {
   errorMessage = '';
   searchTerm = '';
 
-  constructor(private workoutService: WorkoutService) {}
+  constructor(public workoutService: WorkoutService) {}
 
   ngOnInit(): void {
     this.workoutService.getWorkouts().subscribe({

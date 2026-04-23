@@ -29,7 +29,7 @@
     *ngFor="let workout of filteredWorkouts | slice:0:20"
     [routerLink]="['/workouts', workout.id]">
     <ion-card-header>
-      <ion-card-title>{{ workout.name }}</ion-card-title>
+      <ion-card-title>{{ workoutService.getDisplayName(workout.name) }}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>

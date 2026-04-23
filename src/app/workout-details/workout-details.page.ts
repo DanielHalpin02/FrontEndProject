@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  IonBackButton,
+  IonButtons,
   IonButton,
   IonCard,
   IonCardContent,
@@ -9,9 +11,7 @@ import {
   IonContent,
   IonHeader,
   IonTitle,
-  IonToolbar,
-  IonBackButton,
-  IonButtons
+  IonToolbar
 } from '@ionic/angular/standalone';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
@@ -25,6 +25,8 @@ import { WorkoutService } from '../services/workout.service';
   standalone: true,
   imports: [
     CommonModule,
+    IonBackButton,
+    IonButtons,
     IonButton,
     IonCard,
     IonCardContent,
@@ -34,8 +36,6 @@ import { WorkoutService } from '../services/workout.service';
     IonHeader,
     IonTitle,
     IonToolbar,
-    IonBackButton,
-    IonButtons,
     RouterLink
   ]
 })
@@ -46,7 +46,7 @@ export class WorkoutDetailsPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private workoutService: WorkoutService
+    public workoutService: WorkoutService
   ) {}
 
   ngOnInit(): void {
